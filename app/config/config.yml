@@ -3,3 +3,5 @@ imports:
 
 # slim framework configuration
 templates.path: ../templates
+controller.method_suffix: Action
+controller.class_suffix: Controller

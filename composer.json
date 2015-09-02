@@ -11,12 +11,16 @@
             "homepage": "http://www.joshlockhart.com/"
         }
     ],
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
     "require": {
         "php": ">=5.3.0",
         "monolog/monolog": "1.*",
         "slim/slim": "2.*",
         "slim/views": "0.*",
         "twig/twig": "1.*",
-        "techsterx/slim-config-yaml": "^1.0"
+        "techsterx/slim-config-yaml": "^1.0",
+        "slimcontroller/slimcontroller": "^0.4.3"
     }
 }

@@ -1,7 +1,7 @@
 <?php
 require '../vendor/autoload.php';
 
-use Slim\Slim as Slim;
+use SlimController\Slim as Slim;
 
 // Prepare app
 $app = new Slim();
@@ -29,12 +29,9 @@ $app->view->parserOptions = array(
 $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
 // Define routes
-$app->get('/', function () use ($app) {
-    // Sample log message
-    $app->log->info("Slim-Skeleton '/' route");
-    // Render index view
-    $app->render('index.html');
-});
+$app->addRoutes(array(
+    '/' => '\\AppBundle\\Controller\\Index:index'
+));
 
 // Run app
 $app->run();
