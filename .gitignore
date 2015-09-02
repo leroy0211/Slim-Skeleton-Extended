@@ -1,8 +1,8 @@
 /vendor/
-/logs/*
-!/logs/README.md
-/templates/cache/*
-!/templates/cache/README.md
+/app/logs/*
+/app/cache/*
+!/app/logs/README.md
+!/app/cache/README.md
 .DS_STORE
 composer.lock
 /.idea/
