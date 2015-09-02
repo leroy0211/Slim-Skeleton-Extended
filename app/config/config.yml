@@ -1,0 +1,5 @@
+imports:
+    - { resource: parameters.yml }
+
+# slim framework configuration
+templates.path: ../templates

@@ -1,10 +1,13 @@
 <?php
 require '../vendor/autoload.php';
 
+use Slim\Slim as Slim;
+
 // Prepare app
-$app = new \Slim\Slim(array(
-    'templates.path' => '../templates',
-));
+$app = new Slim();
+
+// Replace Slim config system with Yaml config
+\BurningDiode\Slim\Config\Yaml::getInstance()->addFile("../app/config/config_prod.yml");
 
 // Create monolog logger and store logger in container as singleton 
 // (Singleton resources retrieve the same log resource definition each time)
