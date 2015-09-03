@@ -1,12 +1,16 @@
 # Slim Framework Skeleton Application
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework application. This application uses the latest Slim and Slim-Views repositories. It also uses Sensio Labs' [Twig](http://twig.sensiolabs.org) template library.
+Use this skeleton application to quickly setup and start working on a new Slim Framework application. This application uses:
+
+* Sensio Labs' [Twig](http://twig.sensiolabs.org) template library;
+* Fort Rabbit's [SlimController](https://github.com/fortrabbit/slimcontroller) extension wich provides the C of MVC;
+* Techsterx [Slim Config - YAML](https://github.com/techsterx/slim-config-yaml) extension for YAML config support.
 
 This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
 
 ## Install Composer
 
-If you have not installed Composer, do that now. I prefer to install Composer globally in `/usr/local/bin`, but you may also install Composer locally in your current working directory. For this tutorial, I assume you have installed Composer locally.
+If you have not installed Composer, do that now. I prefer to install Composer globally in `/usr/local/bin`, but you may also install Composer locally in your current working directory.
 
 <http://getcomposer.org/doc/00-intro.md#installation>
 
@@ -26,7 +30,7 @@ That's it! Now go build something cool.
 
 ### Pull Requests
 
-1. Fork the Slim Skeleton repository
+1. Fork the Slim Skeleton Extended repository
 2. Create a new branch for each feature or improvement
 3. Send a pull request from each feature branch to the **develop** branch
 
