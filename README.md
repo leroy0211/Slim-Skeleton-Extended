@@ -22,7 +22,7 @@ After you install Composer, run this command from the directory in which you wan
 
 Replace <code>[my-app-name]</code> with the desired directory name for your new application. You'll want to:
 * Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` and `templates/cache` are web writeable.
+* Ensure `app/logs` and `app/cache` are web writeable.
 
 That's it! Now go build something cool.
 
