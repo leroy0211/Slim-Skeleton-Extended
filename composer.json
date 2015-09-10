@@ -16,15 +16,23 @@
         }
     ],
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { "": "src/" },
+        "classmap": ["app/ServiceReference.php"]
     },
     "require": {
         "php": ">=5.3.0",
         "monolog/monolog": "1.*",
         "slim/slim": "3.0.0-RC1",
         "slim/views": "0.*",
-        "twig/twig": "1.*"
+        "twig/twig": "1.*",
+        "techsterx/slim-config-yaml": "dev-update/Update-to-SlimFramework3.0"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/leroy0211/slim-config-yaml"
+        }
+    ],
     "config": {
         "bin-dir": "bin"
     }

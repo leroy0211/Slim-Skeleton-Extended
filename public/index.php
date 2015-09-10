@@ -3,8 +3,30 @@ require '../vendor/autoload.php';
 
 use Slim\App as App;
 
+
 // Prepare app
-$container = new Slim\Container(array("settings" => array("db_host"=>"localhost"))) ;
+$container = new Slim\Container() ;
+
+$container['config'] = function($c){
+    return \BurningDiode\Slim\Config\Yaml::getInstance()
+        ->addParameters($c->get('settings'))
+        ->addFile("../app/config/config_prod.yml");
+};
+
+
+foreach ($container->get('config')->get('services') as $name => $serviceParams) {
+
+    $serviceParams['name'] = $name;
+
+    $container[$name] = function($c) use($serviceParams){
+        if(!array_key_exists('class', $serviceParams)){
+            throw new \Exception("Cannot create service when no class is given");
+        }
+        $service = new ServiceReference($serviceParams);
+        return $service->getService();
+    };
+}
+
 
 $app = new App($container);
 
@@ -38,7 +60,15 @@ $app = new App($container);
 
 $app->get('/', function($request, $response){
 
-    $response->write("Hello world");
+    $helloWorldService1 = $this->__get('app.write.word');
+
+    $helloWorldService2 = $this->__get('app.write.word');
+
+    $response->write($helloWorldService1->write("Hello World Yo!"));
+
+    $response->write($helloWorldService2->write());
+
+
     return $response;
 });
 

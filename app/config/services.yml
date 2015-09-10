@@ -1,0 +1,6 @@
+parameters:
+    appbundle.write_word.class: AppBundle\Service\HelloWorldService
+
+services:
+    app.write.word:
+        class: %appbundle.write_word.class%
