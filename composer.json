@@ -2,13 +2,9 @@
     "name": "flexsounds/slim-skeleton-extended",
     "description": "An Extended Slim Framework skeleton application for rapid development",
     "keywords": ["microframework","rest","router","controller","yaml","twig"],
+    "homepage": "http://www.leroybaeyens.nl",
     "license": "MIT",
     "authors": [
-        {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
-        },
         {
             "name": "Leroy Baeyens",
             "email": "github@leroybaeyens.nl",
@@ -19,12 +15,10 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.5.0",
+        "slim/slim": "3.1.*",
+        "flexsounds/slim-symfony-di-container": "dev-master",
         "monolog/monolog": "1.*",
-        "slim/slim": "2.*",
-        "slim/views": "0.*",
-        "twig/twig": "1.*",
-        "techsterx/slim-config-yaml": "^1.0",
-        "slimcontroller/slimcontroller": "^0.4.3"
+        "slim/twig-view": "1.2.*"
     }
 }

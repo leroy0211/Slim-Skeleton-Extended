@@ -1,9 +1,6 @@
 imports:
     - { resource: parameters.yml }
 
-# slim framework configuration
-templates.path: ../templates
-
-# slim controller configuration
-controller.method_suffix: Action
-controller.class_suffix: Controller
+services:
+    view:
+        class: Slim\Views\Twig
