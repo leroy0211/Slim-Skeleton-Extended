@@ -37,24 +37,45 @@ abstract class Kernel
         return $this->bundles;
     }
 
+    /**
+     * Boot the Kernel
+     *
+     * @throws \Exception
+     */
     public function boot()
     {
         if(true === $this->booted){
             return;
         }
 
-        $this->initializeBundles();
+        $this->initPreBoot();
 
-        $this->initializeContainer();
+        $this->initializeBundles();
 
         foreach ($this->getBundles() as $bundle) {
             $bundle->boot();
         }
 
+        $this->initPostBoot();
+
         $this->booted = true;
     }
 
+    /**
+     * Init custom pre-boot options
+     */
+    protected function initPreBoot(){}
 
+    /**
+     * Init custom post-boot options
+     */
+    protected function initPostBoot(){}
+
+    /**
+     * Initialize the registered bundles
+     *
+     * @throws \Exception
+     */
     protected function initializeBundles()
     {
         $this->bundles = array();
@@ -70,10 +91,6 @@ abstract class Kernel
         }
     }
 
-    protected function initializeContainer()
-    {
-
-    }
 
     protected function getKernelParameters()
     {
